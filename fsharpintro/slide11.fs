@@ -5,12 +5,12 @@ let x = 10
 
 let b = true
 
-let lst = [1;2;3]
+let lst : int list = [1;2;3]
 
 let str = "some string"
 
-let pair = (1,str)
-let tripple = (1,str,0.5)
+let pair : int * string = (1,str)
+let tripple : int * string * double= (1,str,0.5)
 
 let intOption = Some 10
 
@@ -21,14 +21,15 @@ let add a b = a + b
 
 let multiply (a : int) (b : int) = a * b
 
-
+let f s : unit = printfn "%A" s
 
 //closures
 let doSomething a b =
-    let myClosure x = a + x
+    let myClosure x = a + b + x
 
     myClosure b
 
+let (|>) a f = f a
 
 //currying
 let double = multiply 2
@@ -83,6 +84,15 @@ let first10OddNumbers =
 
 let mySet = [1;2;3;4;3;2;3] |> Set.ofSeq
 let myMap = [("A", 100); ("B", 200); ("C", 300)] |> Map.ofSeq
+
+
+/// Algebraic data types
+type MyType = Number of int | Name of string
+
+let a = Number 22
+match a with
+| Number a -> sprintf "number %d" a
+| Name n -> sprintf "name %s" n
 
 /// Non-immutable data
 let mutable a = 10

@@ -61,6 +61,7 @@
     <Compile Include="slide11.fs" />
     <Compile Include="fibonacci.fs" />
     <Compile Include="primes.fs" />
+    <Compile Include="bt.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
