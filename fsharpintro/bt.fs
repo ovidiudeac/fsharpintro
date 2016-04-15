@@ -15,3 +15,4 @@ let rec add x tree =
 let ofSeq (s : 't seq) =
     Seq.fold (fun tree item -> add item tree) Empty s
 
+let firstGtNInOrder (n : int) (tree : Tree<int>) : int = failwith "not impl"
